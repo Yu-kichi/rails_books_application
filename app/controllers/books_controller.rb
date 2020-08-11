@@ -13,7 +13,8 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    #@books = Book.all
+    @books = Book.page(params[:page]).per(10)#マジックナンバーになる。。
     @time = Time.now
   end
 
@@ -30,7 +31,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to @book, success: t('directory.flash.create')
+      redirect_to @book, success: t("directory.flash.create")
     else
       render :new
     end

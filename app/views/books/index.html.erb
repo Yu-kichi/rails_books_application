@@ -28,3 +28,12 @@
 </table>
 <br>
 <%= link_to t('.New Book'), new_book_path %>
+<%= paginate @books %>
+
+ページ:<%= @books.current_page %><br>
+オフセット：<%= @books.offset_value  %><br>
+表示されてる件数：<%= @books.count  %><br>
+トータル件数：<%= @books.total_count %><br>
+最初のページならtrue：<%= @books.first_page?%><br>
+トータル件数：<%= @books.total_count %><br>
+トータル件数：<%= @books.total_count %><br>
