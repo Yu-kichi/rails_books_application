@@ -26,6 +26,7 @@ gem "carrierwave"
 gem "rails-i18n"
 gem "bootstrap", "~> 4.5.0"
 gem "jquery-rails"
+gem "kaminari"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -53,6 +54,7 @@ group :development do
   gem "rubocop-rails"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem 'faker'
 end
 
 group :test do
