@@ -96,6 +96,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-views (1.1.0)
+    devise-i18n (1.9.1)
+      devise (>= 4.7.1)
     erubi (1.9.0)
     execjs (2.7.0)
     faker (2.13.0)
@@ -286,6 +289,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   devise
+  devise-bootstrap-views (~> 1.0)
+  devise-i18n
   faker
   jbuilder (~> 2.7)
   jquery-rails

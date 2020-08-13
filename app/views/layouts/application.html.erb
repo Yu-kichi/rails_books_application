@@ -8,8 +8,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body >
-    <%#= render 'header'%>
-    <%#= render 'flash'%>
+    <%= render 'shared/header'%>
+    <%= render 'shared/flash'%>
     <div class= "container mb-5 ">
 
 <p class="navbar-text pull-right">
@@ -34,7 +34,6 @@
 <% end %>
       <%= yield %>
     </div>
-    <%#= render 'fotter'%>
-    <%#= render 'devise/fotter'%>
+    <%= render 'shared/fotter'%>
   </body>
 </html>
