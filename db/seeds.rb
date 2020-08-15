@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-10.times do |n|
+50.times do |n|
   title = Faker::Book.title 
   author = Faker::Book.author 
   Book.create!(title: title,

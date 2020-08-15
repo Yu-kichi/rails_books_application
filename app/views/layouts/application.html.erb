@@ -9,8 +9,8 @@
   </head>
   <body>
     <%= render "shared/header" %>
-    <%= render "shared/flash" %>
     <div class="container mb-5 ">
+    <%= render "shared/flash" %>
 
 <p class="navbar-text pull-right">
   <% if user_signed_in? %>
@@ -22,16 +22,6 @@
     <%= link_to "Login", new_user_session_path, class: "navbar-link" %>
   <% end %>
 </p>
-
-<ul class="nav navbar-nav">
-  <li class="active"><a href="/books">books</a></li>
-</ul>
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
       <%= yield %>
     </div>
     <%= render "shared/fotter" %>

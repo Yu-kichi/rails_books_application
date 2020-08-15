@@ -31,7 +31,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to @book, success: t("directory.flash.create")
+      redirect_to @book, notice: t("directory.flash.create")
     else
       render :new
     end
@@ -39,7 +39,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      redirect_to @book, success: t("directory.flash.update")
+      redirect_to @book, notice: t("directory.flash.update")
     else
       render :edit
     end
@@ -47,7 +47,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to books_url, danger: t("directory.flash.destroy")
+    redirect_to books_url, alert: t("directory.flash.destroy")
   end
 
   private
