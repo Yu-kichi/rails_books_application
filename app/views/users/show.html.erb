@@ -1,0 +1,8 @@
+<p>Users#show</p>
+<h1><%= User.human_attribute_name(:name)%> :<%= "#{@user.name}"%></h1>
+<p><%= User.human_attribute_name(:email)%> : <%= @user.email %></p>
+<p><%= User.human_attribute_name(:address)%>  : <%= @user.address %></p>
+<p><%= User.human_attribute_name(:zip_code)%> : <%= @user.zip_code %></p>
+<p><%= User.human_attribute_name(:introduction)%> : <%= @user.introduction %></p>
+<%= link_to t("directory.link.Edit"), edit_user_path(@user) %>
+<%# 自分以外編集できないようにする。 %>
