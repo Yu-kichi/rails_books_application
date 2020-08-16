@@ -27,10 +27,10 @@
   </tbody>
 </table>
 <br>
-<%= link_to t(".New Book"), new_book_path %>
-<%= link_to "ユーザーページ", users_path%>
-<div class = ""><%= paginate @books %></div>
-
+<div class = "text-monospace bg-white">
+<button type = "button" class = "btn btn-outline-info"><%= link_to t(".New Book"), new_book_path %></button>
+<div class = "paginate mt-4"><%= paginate @books %></div>
+</div>
 <%# ページ:<%= @books.current_page<br> %>
 <%# オフセット：<%= @books.offset_value<br> %>
 <%# 表示されてる件数：<%= @books.count<br> %>
