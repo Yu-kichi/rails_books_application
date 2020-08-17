@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :set_locale
-
+  before_action :honnin?, only: %i[edit update destory]#destroyはリダイレクトされなかった。調べる。
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -22,6 +22,8 @@ class UsersController < ApplicationController
   end
 
   def edit
+    #@user = User.find(params[:id])
+    #redirect_to(root_url) unless @user == current_user
   end
 
   def update
@@ -31,13 +33,16 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
+  #一応作っとくが管理者以外使えないようにする。
   def destroy
     @user.destroy
     redirect_to users_url, alert: t("directory.flash.destroy")
   end
 
   private
+    def honnin?
+      redirect_to(root_url) unless @user == current_user
+    end
     def set_user
       @user = User.find(params[:id])
     end

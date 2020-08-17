@@ -13,7 +13,7 @@ editページ
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name,autofocus: true %>
   </div>
 
   <div class="field">
@@ -33,7 +33,7 @@ editページ
   
   <div class="field">
     <%= form.label :introduction %>
-    <%= form.text_area :introduction %>
+    <%= form.text_area :introduction,autocomplete: "introduction" %>
   </div>
 
   <div class="actions">
