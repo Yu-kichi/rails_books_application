@@ -3,7 +3,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :set_locale
-  before_action :honnin?, only: %i[edit update destory]#destroyはリダイレクトされなかった。調べる。
+  before_action :honnin?, only: %i[edit update destroy]
+  #skip_before_action :authenticate_user!, only: :show これで書き方はあってることを確認。
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -41,7 +42,8 @@ class UsersController < ApplicationController
 
   private
     def honnin?
-      redirect_to(root_url) unless @user == current_user
+      #redirect_to root_url,notice: t("directory.flash.update") unless @user == current_user 
+      redirect_to root_url,alert: "本人以外はできません" unless @user == current_user #これでdestroyもリダイレクトできる。
     end
     def set_user
       @user = User.find(params[:id])

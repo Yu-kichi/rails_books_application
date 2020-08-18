@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong><%= translate_attribute(:memo) %>:</strong>
-  <%= @book.memo %>
+  <strong><%= translate_attribute(:memo) %></strong>
+  <%= simple_format(@book.memo) %>
 </p>
 
 <p>
