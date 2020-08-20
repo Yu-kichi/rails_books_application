@@ -40,8 +40,8 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "rubocop-performance"
 gem "rubocop-rails"
 gem "devise"
-gem 'devise-bootstrap-views', '~> 1.0'
-gem 'devise-i18n'
+gem "devise-bootstrap-views", "~> 1.0"
+gem "devise-i18n"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
@@ -57,8 +57,8 @@ group :development do
   gem "rubocop-rails"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-  gem 'faker'
-  gem 'erb_lint', require: false
+  gem "faker"
+  gem "erb_lint", require: false
 end
 
 group :test do

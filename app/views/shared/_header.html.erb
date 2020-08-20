@@ -2,13 +2,18 @@
   <div class="navbar navbar-expand-lg navbar-light bg-light ">
     <div class="container">
       <div class="navbar-brand"><%= link_to t("Top"), root_path %></div>
-  <% if user_signed_in? %> 
-    <%#=link_to current_user.name, current_user%> <%#"ここでパスワード変更ページに飛ぶと@userが持っていけないのでエラーになる。パスワードページで表示しないようにするか、消すかdevise controllerを変更して表示できるようにする。"%>
-    <%= link_to "ユーザーページ", users_path%>
+  <% if user_signed_in? %>
+<%= current_user.name %><%#ここの2行は問題ない。%>
+<%= current_user.id %>
+    <%= link_to current_user.name, current_user %> <%#"ここでパスワード変更ページに飛ぶとエラー。パスワードページで表示しないようにするか、消すかdevise controllerを変更して表示できるようにする。"%>
+    <%#下の2行もeditページでのみエラーになる%>
+    <%#= link_to "book_id7",book_path(7)%>
+    <%#= link_to "user_id3",user_path(3)%>
+    <%= link_to "ユーザーページ", users_path %>
     <%= link_to t("directory.link.Logout"), destroy_user_session_path, method: :delete, class: "navbar-link" %>
-  <%else%>
-    <%= link_to "Sign up", new_user_registration_path, class: 'navbar-link'  %> 
-    <%= link_to "Login", new_user_session_path, class: 'navbar-link'  %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, class: "navbar-link" %>
+    <%= link_to "Login", new_user_session_path, class: "navbar-link" %>
   <% end %>
         <% if I18n.locale.to_s == "en" %>
           <%= link_to("日本語にする", locale: "ja") %>

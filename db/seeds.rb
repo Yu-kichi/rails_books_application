@@ -1,7 +1,8 @@
 # frozen_string_literal: true
+
 50.times do |n|
-  title = Faker::Book.title 
-  author = Faker::Book.author 
+  title = Faker::Book.title
+  author = Faker::Book.author
   Book.create!(title: title,
                memo: "#{n+1}冊目楽しいなあ〜",
                author: author,
@@ -12,7 +13,7 @@ end
 10.times do |n|
   name = Faker::Name.name
   email = Faker::Internet.email
-  address = Faker::Address.city 
+  address = Faker::Address.city
   User.create!(name: name,
                introduction: "#{name}ですよろしく！",
                email: email,

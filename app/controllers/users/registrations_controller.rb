@@ -15,9 +15,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  # 動作確認用
+  def edit
+    p @id = current_user.id
+    super
+  end
 
   # PUT /resource
   # def update
@@ -38,10 +40,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  protected
-  def after_update_path_for(resource)
-    user_path(id: current_user.id)
-  end
+  # とりあえず動きの確認用に
+  # protected
+  # def after_update_path_for(resource)
+  #   user_path(id: current_user.id)
+  # end
+
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])

@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 <h1><%= t ".Books" %></h1>
 <table class="table table-hover">
+<%#= link_to "user_path",user_path(3)%><br>
+<%#= link_to "users_path",users_path%>
+<%#= link_to current_user.name,user_path(current_user.id)%>
   <thead>
     <tr class="thead-dark">
       <th><%= translate_attribute(:title) %></th>
@@ -19,17 +22,17 @@
         <td><%= book.memo %></td>
         <td><%= book.picture %></td>
         <td><%= l(book.created_at, format: :short) %></td>
-        <td><button type="button" class = "btn btn-outline-info btn-sm"><%= link_to t("directory.link.Show"), book %></button></td>
-        <td><button type = "button" class = "btn btn-outline-info btn-sm"><%= link_to t("directory.link.Edit"), edit_book_path(book) %></button></td>
-        <td><button type = "button" class = "btn btn-outline-danger btn-sm"><%= link_to t("directory.link.Destroy"), book, method: :delete, data: { confirm: t("directory.modal.confirm") } %></button></td>
+        <td><button type="button" class="btn btn-outline-info btn-sm"><%= link_to t("directory.link.Show"), book %></button></td>
+        <td><button type="button" class="btn btn-outline-info btn-sm"><%= link_to t("directory.link.Edit"), edit_book_path(book) %></button></td>
+        <td><button type="button" class="btn btn-outline-danger btn-sm"><%= link_to t("directory.link.Destroy"), book, method: :delete, data: { confirm: t("directory.modal.confirm") } %></button></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<div class = "text-monospace bg-white">
-<button type = "button" class = "btn btn-outline-info"><%= link_to t(".New Book"), new_book_path %></button>
-<div class = "paginate mt-4"><%= paginate @books %></div>
+<div class="text-monospace bg-white">
+<button type="button" class="btn btn-outline-info"><%= link_to t(".New Book"), new_book_path %></button>
+<div class="paginate mt-4"><%= paginate @books %></div>
 </div>
 <%# ページ:<%= @books.current_page<br> %>
 <%# オフセット：<%= @books.offset_value<br> %>

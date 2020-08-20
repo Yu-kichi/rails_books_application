@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_08_15_065453) do
-
   create_table "add_picture_to_books", force: :cascade do |t|
     t.string "picture"
     t.datetime "created_at", precision: 6, null: false
@@ -42,5 +41,4 @@ ActiveRecord::Schema.define(version: 2020_08_15_065453) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 end

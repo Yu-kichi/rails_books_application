@@ -13,8 +13,8 @@ class BooksController < ApplicationController
   end
 
   def index
-    #@books = Book.all
-    @books = Book.page(params[:page]).per(10)#マジックナンバーになる。。
+    # @books = Book.all
+    @books = Book.page(params[:page]).per(10) # マジックナンバーになる。。
     @time = Time.now
   end
 

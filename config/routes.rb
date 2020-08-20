@@ -5,8 +5,9 @@ Rails.application.routes.draw do
     root "books#index"
     resources :books
     devise_for :users, controllers: {
-        registrations: 'users/registrations',#これいる？
+        registrations: "users/registrations",  # これいる？
+        sessions:      "users/sessions",
      }
-    resources :users, except: [:new,:create]
+    resources :users, except: [:new, :create]
   end
 end
