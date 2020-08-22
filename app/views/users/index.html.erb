@@ -9,3 +9,4 @@ destroyリンクは管理者だけに表示
        <td><%= link_to t("directory.link.Show"), user %></td>
        <td><%= link_to t("directory.link.Destroy"), user, method: :delete, data: { confirm: t("directorymodal.confirm") } %></td>
 <% end %>
+<div class="paginate mt-4"><%= paginate @users %></div>

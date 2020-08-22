@@ -17,7 +17,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
   # 動作確認用
   def edit
-    p @id = current_user.id
     super
   end
 

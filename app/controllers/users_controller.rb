@@ -5,17 +5,9 @@ class UsersController < ApplicationController
   before_action :set_locale
   before_action :honnin?, only: %i[edit update destroy]
   # skip_before_action :authenticate_user!, only: :show これで書き方はあってることを確認。
-  def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
-  end
-
-  def default_url_options
-    { locale: I18n.locale }
-  end
 
   def index
-    @users = User.all
-    # @users = User.page(params[:page]).per(10)#マジックナンバーになる。。
+    @users = User.page(params[:page]).per(10)#マジックナンバーになる。。
     @time = Time.now
   end
 
