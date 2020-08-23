@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @user= @book.users
+    #@book = current_user.books.find(params[:id])
   end
 
   def new
@@ -21,7 +21,8 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
+    #@book = Book.new(book_params)
+    @book = current_user.books.new(book_params)
     if @book.save
       redirect_to @book, notice: t("directory.flash.create")
     else
