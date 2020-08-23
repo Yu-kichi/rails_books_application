@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_15_065453) do
+ActiveRecord::Schema.define(version: 2020_08_22_083902) do
+
   create_table "add_picture_to_books", force: :cascade do |t|
     t.string "picture"
     t.datetime "created_at", precision: 6, null: false
@@ -24,6 +25,13 @@ ActiveRecord::Schema.define(version: 2020_08_15_065453) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "author"
     t.string "picture"
+  end
+
+  create_table "user_books", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "book_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,4 +49,5 @@ ActiveRecord::Schema.define(version: 2020_08_15_065453) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end

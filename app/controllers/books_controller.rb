@@ -5,11 +5,12 @@ class BooksController < ApplicationController
   before_action :set_locale
 
   def index
-    @books = Book.page(params[:page]).per(10) # マジックナンバーになる。。
+    @books = Book.page(params[:page]).per(Settings.service.count) # マジックナンバーになる。。
     @time = Time.now
   end
 
   def show
+    @user= @book.users
   end
 
   def new

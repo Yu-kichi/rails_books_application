@@ -18,6 +18,9 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
+         <%# if book.created_by?(4) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
+         <%#= link_to "tesu", user_path(4) %>
+         <%#end%>
         <td><%= book.author %></td>
         <td><%= book.memo %></td>
         <td><%= book.picture %></td>
