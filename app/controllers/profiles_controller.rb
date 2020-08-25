@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
+    #@profile = Profile.find(params[:id])
     # redirect_to(root_url) unless @profile == current_profile
   end
 
@@ -50,7 +50,7 @@ class ProfilesController < ApplicationController
       #redirect_to root_url, alert: "本人以外はできません" unless @profile == current_profile # これでdestroyもリダイレクトできる。
     end
     def set_profile
-      @profile = Profile.find(params[:id])
+      #@profile = Profile.find(params[:id])
     end
 
     def profile_params

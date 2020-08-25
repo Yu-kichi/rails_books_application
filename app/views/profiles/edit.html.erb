@@ -1,16 +1,16 @@
 <h1>Profiles#edit</h1>
 <p>Find me in app/views/profiles/edit.html.erb</p>
 <%= form_with(model: @profile, local: true) do |form| %>
-  <% if @profile.errors.any? %>
+  <%# <% if @profile.errors.any? %>
     <div id="error_explanation">
-      <h2><%= t("errors.template.header", model: Profile, count: @profile.errors.count) %></h2>
+      <h2><%#= t("errors.template.header", model: Profile, count: @profile.errors.count) %></h2>
       <ul>
-        <% @profile.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+        <%# @profile.errors.full_messages.each do |message| %>
+          <li><%#= message %></li>
+        <%# end %>
       </ul>
     </div>
-  <% end %>
+  <%# end %> 
 
   <div class="field">
     <%= form.label :name %>
