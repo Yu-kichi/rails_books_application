@@ -27,6 +27,9 @@ gem "rails-i18n"
 gem "bootstrap", "~> 4.5.0"
 gem "jquery-rails"
 gem "kaminari"
+gem 'html-pipeline'
+gem 'commonmarker'
+gem "rinku"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
