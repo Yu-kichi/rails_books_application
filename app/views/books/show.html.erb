@@ -1,24 +1,26 @@
 <p>
   <h1>
-    <strong><%= translate_attribute(:title)%>:</strong>
+    <strong><%= translate_attribute(:title) %>:</strong>
     <%= @book.title %>
   </h1>
 </p>
-
+<p><%=@book.user.name%></p>
+<p><%#=@user.name%></p>
 <p>
-  <strong><%= translate_attribute(:memo)%>:</strong>
-  <%= @book.memo %>
+  <strong><%= translate_attribute(:memo) %></strong>
+  <%= simple_format(@book.memo) %>
+  <%= callman(@book.memo) %>
 </p>
 
 <p>
-  <strong><%= translate_attribute(:author)%>:</strong>
+  <strong><%= translate_attribute(:author) %>:</strong>
   <%= @book.author %>
 </p>
 
 <p>
-  <strong><%= translate_attribute(:picture)%>:</strong>
+  <strong><%= translate_attribute(:picture) %>:</strong>
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<%= link_to t('directory.link.Edit'), edit_book_path(@book) %> |
-<%= link_to t('directory.link.Back'), books_path %>
+<%= link_to t("directory.link.Edit"), edit_book_path(@book) %> |
+<%= link_to t("directory.link.Back"), books_path %>

@@ -5,6 +5,7 @@ ja:
       Edit: 編集
       Show: 詳細
       Destroy: 削除
+      Logout: ログアウト
     flash:
       destroy: 削除しました！
       create: 作成しました！

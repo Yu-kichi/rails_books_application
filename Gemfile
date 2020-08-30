@@ -27,6 +27,9 @@ gem "rails-i18n"
 gem "bootstrap", "~> 4.5.0"
 gem "jquery-rails"
 gem "kaminari"
+gem 'html-pipeline'
+gem 'commonmarker'
+gem "rinku"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -39,6 +42,10 @@ gem "kaminari"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "rubocop-performance"
 gem "rubocop-rails"
+gem "devise"
+gem "devise-bootstrap-views", "~> 1.0"
+gem "devise-i18n"
+gem 'config'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
@@ -54,7 +61,10 @@ group :development do
   gem "rubocop-rails"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-  gem 'faker'
+  gem "faker"
+  gem "erb_lint", require: false
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do

@@ -1,0 +1,11 @@
+<h1>Profiles#show</h1>
+<p>Find me in app/views/profiles/show.html.erb</p>
+
+<h1><%= Profile.human_attribute_name(:name) %> :<%= "#{@profile.name}" %></h1>
+<p><%= Profile.human_attribute_name(:address) %>  : <%= @profile.address %></p>
+<p><%= Profile.human_attribute_name(:zip_code) %> : <%= @profile.zip_code %></p>
+<p><%= Profile.human_attribute_name(:introduction) %> : <%= @profile.introduction %></p>
+<%# 自分以外編集できないようにする。 %>
+  <%#= link_to t("directory.link.Edit"), edit_profile_path(@profile) %> |
+  <%#= link_to "Edit password", user_profile_registration_path, class: "navbar-link" %>
+
